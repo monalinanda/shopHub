@@ -6,7 +6,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 app.use(express.json());
 app.use(cors({
-  origin : '*'
+  origin : ["https://shop-hub-omega.vercel.app/" , "http://localhost:5173/"]
 }
 ));
 
