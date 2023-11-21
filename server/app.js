@@ -5,10 +5,11 @@ const cors = require("cors");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 app.use(express.json());
-app.use(cors({
-  origin : ["https://shop-hub-omega.vercel.app/" , "http://localhost:5173/"]
-}
-));
+app.use(
+  cors({
+    origin: ["https://shop-hub-omega.vercel.app/", "http://localhost:5173/"],
+  })
+);
 
 // checkout api
 app.post("/api/create-checkout-session", async (req, res) => {
