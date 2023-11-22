@@ -7,7 +7,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 app.use(express.json());
 app.use(
   cors({
-    origin: ["https://shop-hub-omega.vercel.app/", "http://localhost:5173/"],
+    origin: ["https://shop-hub-rho.vercel.app/", "http://localhost:5173/"],
   })
 );
 
@@ -29,8 +29,8 @@ app.post("/api/create-checkout-session", async (req, res) => {
     payment_method_types: ["card"],
     line_items: lineItems,
     mode: "payment",
-    success_url: "https://shop-hub-omega.vercel.app/success",
-    cancel_url: "https://shop-hub-omega.vercel.app/cancel",
+    success_url: "https://shop-hub-rho.vercel.app/success",
+    cancel_url: "https://shop-hub-rho.vercel.app/cancel",
   });
 
   res.json({ id: session.id });
